@@ -1,0 +1,32 @@
+1 b.Export
+
+list.files()
+getwd()
+setwd("C:/Users/bharath kumar/Documents/R studio")
+getwd()
+getwd()
+sales_delim<-read.delim("bank_data.csv",sep=",")
+sales_delim
+vec<-seq(1,600)
+data3<-sales_delim
+data3<-cbind(sales_delim,size=vec)
+data3
+
+#write.table(data3,"ex.txt",sep="\t",row.names=FALSE)
+
+write.csv(data3,"export.csv",row.names=FALSE)
+
+2.Data Frame
+
+
+buff_tail<-c(10,1,37,5,12)
+garden_bee<-c(8,3,9,6,4)
+red_tail<-c(18,9,12,4,1)
+carder_bee<-c(8,27,6,32,23)
+honey_bee<-c(12,13,6,9,4)
+data1<-data.frame(buff_tail,garden_bee,red_tail,carder_bee,honey_bee)
+data1
+row.names(data1)
+row.names(data1)<-c("Thistle","Vipers","Golden Rain","Yellow alfala","Blackberry")
+data1
+str(data1)
