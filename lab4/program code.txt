@@ -1,0 +1,48 @@
+3.a)
+
+buff_tail=c(10,1,37,5,12)
+garden_bee=c(8,3,9,6,4)
+red_tail=c(1,8,9,12,4)
+carder_be=c(8,27,6,32,23)
+honey_bee=c(12,13,6,9,10)
+mat1<-matrix(nrow=5,ncol=5,byrow=T,data=c(buff_tail,garden_bee,red_tail,carder_be,honey_bee))
+mat1
+row.names(mat1)=c("Thistle","Vipers","Golden","Rain","Yellow")
+mat1
+
+
+3.b)
+
+l1=c(1,2,3,4,5)
+l2=c("water","apple","bharath")
+l3=c(1.2,3.4)
+l4=list(l1,l2,l3)
+l4
+names(l4)=c("integer","string","real no")
+l4
+
+
+
+
+Factors_program
+
+setwd("C:/Users/bharath kumar/Desktop/DSR lab programs/lab4")
+getwd()
+data<-read.csv("Churn_Modelling.csv")
+#View(data)
+data$EstimatedSalary
+income_group<-vector(mode="character",length=length(data$EstimatedSalary))
+income_group
+income_group[data$EstimatedSalary<10000]<-"Low"
+income_group
+income_group[data$EstimatedSalary>=10000 & data$EstimatedSalary < 100000]<-"middle"
+income_group[data$EstimatedSalary>100000]<-"High"
+income_group
+spender<-factor(income_group,levels=c("Low","middle","High"),ordered=TRUE)
+View(spender)
+bk<-cbind(data,spender)
+View(bk[-14])
+
+
+write.csv(bk,"Modified.csv",row.names = FALSE)
+
