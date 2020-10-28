@@ -1,0 +1,29 @@
+5.a)
+emp_id =c(1,2,3,4,5,6,7,8,9,10)
+salary =c(1000,2222,3333,4567,5000,7000,100,5000,3000,2000)
+ms=c("Married","Bachelor","Married","Married","Bachelor","Bachelor","Married","Married","Bachelor","Bachelor")
+df=data.frame(emp_id,salary,ms)
+df
+boxplot(df$salary,names = c('salary'),xlab='var',ylab='value',col='gray90')
+quantile(df$salary)
+IQR(df$salary)
+boxplot(salary~ms,data=df)
+
+
+b)
+library(ggplot2)
+set.seed(100)
+x<-rnorm(100,mean=0,sd=1)
+x
+
+y<-rnorm(100,mean=0,sd=1)
+y
+dat<-as.data.frame(cbind(x,y))
+boxplot(dat, col="blue")
+
+x<-rnorm(100,mean=0,sd=1)
+x
+y<-rnorm(100,mean=0,sd=1)
+y
+dat<-as.data.frame(cbind(x,y))
+ggplot()+geom_point(data=dat, aes(x=x,y=y),size=3, color="blue")+ggtitle("Scatter Plot")+labs(y= "Y Axis", x = "X Axis")
